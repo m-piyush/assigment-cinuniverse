@@ -1,12 +1,11 @@
 "use client";
-"use client";
 import { useParams, useRouter } from "next/navigation";
 import { useTasks } from "@/hooks/useTasks";
 import { useEffect, useState } from "react";
 
 export default function TaskFormPage() {
   const router = useRouter();
-  const { id } = useParams(); // get id from dynamic route
+  const { id } = useParams();
   const { tasks, mutate } = useTasks();
 
   const [form, setForm] = useState({
@@ -44,7 +43,6 @@ export default function TaskFormPage() {
     mutate();
     router.push("/");
   };
-
 
   return (
     <div className="p-6">
